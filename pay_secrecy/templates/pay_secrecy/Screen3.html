@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <center> Stage One - Slider Bar Task</center>
+{% endblock %}
+
+{% block content %}
+    <p>
+    This task is called the slider bar task. On the next screen, you will see a large number of sliders that are initially positioned at 0 along a scale from 0 to 100. Your goal is to position each slider at <b>exactly 50</b>.
+    </p>
+    <p>
+    The slider can be adjusted and readjusted an unlimited number of times. Everyone has the same slider task. The computer will count the number of sliders you correctly positioned.
+    </p>
+    <p>
+    Please spend some time to familiarize yourself with the task. Click “Start Practice” to start the practice period and the practice period will automatically end after 60 seconds.
+    </p>
+    {% next_button %}
+{% endblock %}

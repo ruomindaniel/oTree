@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Uncontrollable Shock
+{% endblock %}
+
+{% block content %}
+    <p>
+    Much like in the real world, sometimes employees’ output could be affected by a “shock” that is out of their control. An example would be changes in local weather and economic conditions. In the study, such uncontrollable shock may cause an increase or decrease in some employees’ output by up to <b>20</b> units.
+    </p>
+    <p>
+    For example, if an employee’s pre-shock output is 60, an uncontrollable shock could result in a final output that is anywhere between 40 and 80 units. Specifically, the final output may be [40, 41, 42,...78, 79, 80] and each number within that range is equally likely.
+    </p>
+    <p>
+    Employees who are affected by the uncontrollable shock will find out how exactly the shock affects their output. The manager and the other employees will learn whether a shock has occurred and whether the shock positively or negatively affects that employee’s output, but they will NOT find out the exact amount of the effect.
+    </p>
+    {% next_button %}
+
+{% endblock %}

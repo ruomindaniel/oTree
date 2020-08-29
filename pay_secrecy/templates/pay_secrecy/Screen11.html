@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Employee's Effort Choice, Ability and Output
+{% endblock %}
+
+{% block content %}
+    <p>
+    In each period, each employee will start with an initial balance of 20 points in an account and each manager will start with an initial balance of 10 points in an account.
+    </p>
+    <p>
+    The employees’ task is to choose an effort level.  Possible effort levels range from 0 to 20.  Just like there is a cost to working harder in the real world, there is a cost to choosing a higher effort level in this study. Each unit of effort will cost the employee 1 point.  Thus, if an employee chooses an effort level of 10, then 10 points will be deducted from the employee’s account.
+    </p>
+    <p>
+    The more effort an employee puts in, the greater the firm output.
+    The output generated is the product of an employee’s effort and the employee ability. In your firm, all three employees have the SAME ability of 5. That means, if an employee increases his/her effort level by one unit, the firm output will increase by 5 units.
+    </p>
+    <p>
+    For example, if an employee chooses to exert 12 units of effort, this will result in 12 x 5= 60 units of output for the firm. This effort choice will cost this employee 12 points.
+    </p>
+    <p>
+    Each employee in the firm will independently choose his/her effort level, and such effort choice is NOT directly observable by anyone else in the firm, including the Manager.
+    </p>
+    {% next_button %}
+
+{% endblock %}

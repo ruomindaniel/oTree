@@ -1,0 +1,127 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Real Slider Task
+{% endblock %}
+
+{% block content %}
+
+    <script>
+        console.log("Hello")
+
+      //   var SliderTouched = false;
+      // var selector = $('[data-slider] input[type="range"]');
+      // selector.change(function() {
+      //   SliderTouched = true;
+      // });
+
+
+      // $( ".form" ).submit(function( event ) {
+      //   if (!SliderTouched){
+      //   event.preventDefault();}
+      // });
+        // timer
+        let scores = 0;
+
+        const body = document.getElementsByClassName('_otree-content')[0]
+        console.log(body)
+        const wrap = document.createElement('div')
+        wrap.className = 'wrap'
+        // wrap.appendChild(timer)
+        for (let i = 0; i < 30 ; i++) {
+            const div = document.createElement('div')
+            div.className = 'input-group'
+
+            // prepand
+            const prepand = document.createElement('div')
+            prepand.className = 'input-group-prepand'
+            const span1 = document.createElement('span')
+            span1.className = 'input-group-text'
+            span1.innerText = '' + 0
+            prepand.appendChild(span1)
+
+            // input
+            const input = document.createElement('input')
+            input.type = 'range'
+            input.name = "member"+i
+            input.className = 'slider'
+            input.min = 0
+            input.max = 100
+            input.step = 1
+            input.value = Math.floor((Math.random() * 100));
+            input.oninput = function(){
+                // find sub that shows score
+                const sub = this.nextSibling.nextSibling
+                sub.innerText = "" + this.value
+                let ll = 0
+                const sliders = document.getElementsByClassName('slider')
+
+                for(let i = 0; i < sliders.length; i++){
+                    if(sliders[i].value == 50){
+                        ll = ll + 1
+                    }
+                }
+                const timer = document.getElementsByClassName('timer')
+                timer[0].innerText = 'Completed: ' + ll
+            }
+            if(input.value == 50){
+                scores = scores + 1
+            }
+            // append
+            const append = document.createElement('div')
+            append.className = 'input-group-append'
+            const span2 = document.createElement('span')
+            span2.className = 'input-group-text'
+            span2.innerText = '' + 100
+            append.appendChild(span2)
+
+            // dynamic score display for slider bar
+            let sub = document.createElement('div')
+            sub.className = 'sub'
+            sub.innerText = ""+input.value
+
+            div.appendChild(prepand)
+            div.appendChild(input)
+            div.appendChild(append)
+            div.appendChild(sub)
+
+            wrap.appendChild(div)
+    }
+    const timer = document.createElement('div')
+    timer.className = 'timer'
+    timer.innerText = 'Completed: ' + scores
+
+    body.appendChild(timer)
+    body.appendChild(wrap)
+
+ </script>
+ <style>
+    .timer{
+        text-align: right;
+        font-size: 30px;
+        /*margin-right: 40px;*/
+    }
+    .wrap{
+        float:left;
+        width: 1000px;
+        margin-bottom: 50px;
+    }
+    .input-group{
+        max-width: 330px;
+        display: flex;
+        margin-top: 20px;
+        float: left;
+    }
+    .sub{
+        margin-left: 10px;
+        margin-top: 5px;
+        display: flex;
+     }
+
+ </style>
+{% next_button %}
+{% endblock %}
+<!-- <script type="text/javascript" src="/templates/pay_secrecy/script.js"></script>
+<script type="text/javascript" src="script.js"></script> -->
+

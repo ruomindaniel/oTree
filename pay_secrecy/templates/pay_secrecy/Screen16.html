@@ -1,0 +1,81 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Earnings
+{% endblock %}
+
+{% block content %}
+    <p>
+        In each period, employee's earnings are:
+    </p>
+    <p>
+        <ul style="list-style-type: none">
+            <li>
+                Employee’s initial balance (20 points)
+            </li>
+            <li class = 'minus'>
+                Employee’s effort (0 to 20 points)
+            </li>
+            <li class = 'plus'>
+                Employee’s individual bonus (15% of individual output)
+            </li>
+            <li class = 'plus'>
+                <u>Employee’s share of the bonus pool (allocated by the manager)</u>
+            </li>
+            <li class = 'equal'>
+                Employee’s earnings for the period
+            </li>
+        </ul>
+    </p>
+    <p>
+        In each period, manager's earnings are:
+    </p>
+    <p>
+        <ul style="list-style-type: none">
+            <li>
+                Manager’s initial balance (10 points)
+            </li>
+            <li class = 'plus'>
+                <u>Manager’s bonus (a portion of total firm output)</u>
+            </li>
+            <li class = 'equal'>
+                Manager’s earnings for the period
+            </li>
+        </ul>
+    </p>
+    {% next_button %}
+    <style type="text/css">
+        ul {
+          list-style: none;
+          margin-left: 40px;
+          padding-left: 0;
+        }
+
+        li {
+          padding-left: 1em;
+          text-indent: -1em;
+        }
+
+        li:before {
+            content: " ";
+            padding-right: 20px;
+        }
+
+        .plus:before {
+          content: "+";
+          padding-right: 5px;
+        }
+
+        .minus:before {
+          content: "-";
+          padding-right: 8px;
+        }
+
+        .equal:before {
+          content: "=";
+          padding-right: 5px;
+        }
+    </style>
+
+{% endblock %}

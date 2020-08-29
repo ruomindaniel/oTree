@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <center>
+        <b><u>QUIZ</u></b> <i>(all conditions except as noted)</i>
+    </center>
+    <center>
+        <i>(This quiz was completed on a computer; <b>correct answers are in bold)</b></i>
+    </center>
+
+    <p style="margin-top: 30px">
+        <b>
+            Before moving to the task, we would like to ensure that we have communicated these instructions properly. Please select the most appropriate answer to the following questions.
+        </b>
+    </p>
+    <p>
+        <b>
+            You may use a calculator, on your cell phone or on your computer, to answer the quiz questions.
+        </b>
+    </p>
+
+    {% formfields %}
+
+    {% next_button %}
+
+{% endblock %}

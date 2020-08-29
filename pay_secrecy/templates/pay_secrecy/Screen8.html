@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <center> Stage One - Slider Bar Task</center>
+{% endblock %}
+
+{% block content %}
+    <p>
+        In the practice period, your role is <b>{{role}}</b> based on your performance on the sliding bar task.
+        Your correct answer is : {{player.correct_ans}}
+    </p>
+    {% next_button %}
+{% endblock %}
+
+

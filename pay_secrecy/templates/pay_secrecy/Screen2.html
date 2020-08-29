@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Role Explanation
+{% endblock %}
+
+{% block content %}
+    <p>
+        In today’s study, some the participants will play the role of the manager in a firm and the remaining participants the role of the employee. Your role in the firm is determined by your performance on the slider bar task in Stage One.
+    </p>
+    <p>
+        In Stage One, all participants will work on a slider bar task. The top quarter performers on this task will be promoted to the role of manager and the remaining will be employees. The manager and the employees will have different responsibilities in Stage Two, as well as different compensation schemes.
+    </p>
+    <p>
+        Please click “Next” to learn about the slider bar task.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <center> Stage One - Slider Bar Task</center>
+{% endblock %}
+
+{% block content %}
+    <p>
+        We ranked the participants on the performance from the slider bar task you just completed. Based on your ranking, you will be a [Manager / Employee] in Stage Two.
+    </p>
+
+    {% if role != "manager" %}
+    <p>
+        To properly distinguish you from the other employees, you have been randomly assigned a letter [A, B, or C]. The firm you are assigned to is Firm [{{firm}}].
+    </p>
+    {% endif %}
+    {% next_button %}
+{% endblock %}
+
+
