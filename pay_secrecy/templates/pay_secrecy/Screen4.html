@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Real Slider Task
+    Practice Slider Task
 {% endblock %}
 
 {% block content %}
@@ -49,7 +49,8 @@
             input.min = 0
             input.max = 100
             input.step = 1
-            input.value = Math.floor((Math.random() * 100));
+            // input.value = Math.floor((Math.random() * 100));
+            input.value = 0
             input.oninput = function(){
                 // find sub that shows score
                 const sub = this.nextSibling.nextSibling
@@ -95,6 +96,19 @@
     body.appendChild(timer)
     body.appendChild(wrap)
 
+
+    $('.input-group-prepand').each(function(){
+        randomizeObject(this);
+
+    })
+
+    function randomizeObject(el){
+        var randomnumber1=Math.floor(Math.random()*101) - 50;
+        $(el).css({"margin-left": randomnumber1+"px"});
+    }
+
+    // setInterval(randomMargin, 1000);
+
  </script>
  <style>
     .timer{
@@ -118,7 +132,9 @@
         margin-top: 5px;
         display: flex;
      }
-
+     .input-group-prepand{
+        /*margin-left: 10px;*/
+     }
  </style>
 {% next_button %}
 {% endblock %}

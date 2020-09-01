@@ -51,7 +51,7 @@ class Screen6(Page):
 class Screen7(Page):
     '''Real Sliding Bar Task
     '''
-    # timeout_seconds = 60
+    timeout_seconds = 60
     form_model = 'player'
 
     form_fields = ['member'+str(i) for i in range(30)]
