@@ -104,18 +104,22 @@ class Screen11(Page):
 class Screen12(Page):
     ''' Uncontrollable Shock to Output
     '''
-class Screen13A(Page):
+class Screen13(Page):
     ''' Employee and Manager Bonuses(Pay Transparent Condition)
     '''
+    def vars_for_template(self):
+        return dict(pay_transparent = Constants.pay_transparent,)
 class Screen13B(Page):
     ''' Employee and Manager Bonuses(Pay Transparent Condition)
     '''
 class Screen14(Page):
     ''' Performance Feedback
     '''
-class Screen15A(Page):
+class Screen15(Page):
     ''' Bonus distribution
     '''
+    def vars_for_template(self):
+        return dict(pay_transparent = Constants.pay_transparent,)
 class Screen15B(Page):
     ''' Bonus distribution
     '''
@@ -129,11 +133,28 @@ class Screen18(Page):
     ''' Quiz
     '''
     form_model = 'player'
-    form_fields = ['question1', 'question2', 'question3', 'question4', 'question5',
-                    'question6', 'question7', 'question8', 'question9', 'question10',
-                    'question11', 'question12', 'question13', 'question14', 'question15'] # this means all questions
+    # form_fields = ['question1', 'question2', 'question3', 'question4', 'question5',
+    #                 'question6', 'question7', 'question8', 'question9', 'question10',
+    #                 'question11', 'question12', 'question13', 'question14', 'question15'] # this means all questions
+    form_fields = ['question1']
+# class Results(Page):
+#     form_model = 'player'
+#     form_fields = ['question1']
+#     def vars_for_template(self):
+#         return dict(question=1,
+#                     answer=2,)
+
+class Screen18(Page):
+    form_model = 'player'
+    form_fields = ['question1']
+
+
 class Results(Page):
-    pass
+    form_model = 'player'
+    form_fields = ['question1']
+    def vars_for_template(self):
+        return dict(question=1,
+                    answer=2,)
 
 
 #page_sequence = [Screen1, Screen2, Screen3, Screen4, ResultsWaitPage, Screen5, ResultsWaitPage, Screen6, Screen7, ResultsWaitPage, Screen8, Screen9, Screen10, ResultsWaitPage,Results]
@@ -142,5 +163,6 @@ class Results(Page):
 # page_sequence = [Screen14, Screen15A, Screen15B, Screen16, Screen17, Screen18]
 page_sequence = [Screen1, Screen2, Screen3, Screen4, ResultsWaitPage, Screen5, ResultsWaitPage,
                     Screen6, Screen7, MyWaitPage, Screen8, Screen9, Screen10,
-                    Screen11, Screen12, Screen13A, Screen13B,
-                    Screen14, Screen15A, Screen15B, Screen16, Screen17, Screen18]
+                    Screen11, Screen12, Screen13,
+                    Screen14, Screen15, Screen16, Screen17]
+# page_sequence = [Screen18, Results]

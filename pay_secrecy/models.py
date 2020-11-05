@@ -21,6 +21,8 @@ class Constants(BaseConstants):
     name_in_url = 'pay_secrecy'
     players_per_group = None
     num_rounds = 1
+    pay_transparent = 0
+
 
 class Subsession(BaseSubsession):
     pass

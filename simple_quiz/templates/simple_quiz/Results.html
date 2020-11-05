@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+
+    <table class="table">
+        <tr>
+            <th>Question</th>
+            <th>Your answer</th>
+            <th>Correct answer</th>
+            <th>Answered correctly?</th>
+        </tr>
+
+            <tr>
+                <td>{{ player.question }}</td>
+                <td>{{ player.submitted_answer }}</td>
+                <td>{{ player.showed_solution }}</td>
+                <td>{{ player.is_correct }}</td>
+            </tr>
+
+
+    </table>
+
+
+    {% next_button %}
+{% endblock %}
+

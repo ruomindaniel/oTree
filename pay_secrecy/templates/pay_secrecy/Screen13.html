@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Employee and Manager Bonuses (Pay Secret Condition)
+    Employee and Manager Bonuses {% if pay_transparent == 1 %} (Pay Transparent Condition) {% else %} (Pay Secret Condition){% endif %}
 {% endblock %}
 
 {% block content %}
@@ -19,9 +19,15 @@
         <li class = 'list'>
             <b>Individual Bonus</b>: it is based on the employee’s individual output; each employee will earn 15% of his/her output, subject to the uncontrollable shock (if any). For instance, if an employee produced 60 units in the period, the individual bonus will be 9 points (60 * 15%).
         </li>
+        {% if pay_transparent == 1 %}
         <li class = 'list'>
             <b>Shared Bonus</b>: it is from a bonus pool; The manager can distribute the bonus pool in any way, but cannot keep for themselves any bonus designated for employees.
         </li>
+        {% else %}
+        <li class = 'list'>
+            <b>Shared Bonus</b>: it is from a bonus pool; a portion of the firm output will be added to an employee bonus pool, which will be distributed among the three employees by the manager. Therefore, the higher the total firm output, the larger the employee bonus pool. The manager can distribute the bonus pool in any way, but cannot keep for themselves any bonus designated for employees.
+        </li>
+        {% endif %}
     </ol>
     {% next_button %}
     <style type="text/css">

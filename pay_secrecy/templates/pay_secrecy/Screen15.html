@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block title %}
-    Employees' Bonus Distribution (Pay Transparent Conditions)
+    Employees' Bonus Distribution {% if pay_transparent == 1 %} (Pay Transparent Condition) {% else %} (Pay Secret Condition){% endif %}
 {% endblock %}
 
 {% block content %}
@@ -10,6 +10,7 @@
         The employee bonus pool will be distributed among the three employees by the Manager.
         Specifically, the Manager will allocate the bonus pool by entering the bonus amounts, in points, in the computer.  The sum of the three bonuses must equal the total employee bonus and no employee can receive less than zero.
     </p>
+    {% if pay_transparent == 1 %}
     <p>
         <b>All three employees will be informed of: </b>
         <ol style="list-style-type: decimal">
@@ -21,6 +22,21 @@
             </li>
         </ol>
     </p>
+    {% else %}
+    <p>The employees will learn, <b>in private</b>, about their own bonus amount.
+        <b>The employees will NOT be informed of:</b>
+    </p>
+    <p>
+        <ol style="list-style-type: decimal">
+            <li>
+                the total amount of the employee bonus pool, and
+            </li>
+            <li>
+                the amount of bonus allocated to other employees by the Manager.
+            </li>
+        </ol>
+    </p>
+    {% endif %}
     {% next_button %}
     <style type="text/css">
         li {

@@ -2,11 +2,48 @@
 {% load otree static %}
 
 {% block title %}
-    Page title
+    Results
 {% endblock %}
 
 {% block content %}
 
+    {% formfields %}
+    <script>
+        (function(){
+        let num = {{question}}
+        let answer = {{answer}}
+        const choices = document.getElementsByName('question'+num)
+
+
+        const choice = Array.prototype.filter.call(choices, (choice) => {
+            return choice.checked == true
+        })[0]
+
+        const correct_ans = choices[answer-1]
+
+        if(choice === correct_ans){
+            const div = document.createElement('div')
+            div.innerText = "Correct! "
+            choice.parentElement.prepend(div)
+            choice.parentElement.style.color = 'MediumSeaGreen'
+        } else {
+            const div = document.createElement('div')
+            div.innerText = "You answered: "
+            choice.parentElement.prepend(div)
+            choice.parentElement.style.color = 'red'
+
+            const div2 = document.createElement('div')
+            div2.innerText = "Correct answer is:"
+            correct_ans.parentElement.prepend(div2)
+            correct_ans.parentElement.style.color = 'MediumSeaGreen'
+        }
+
+
+        const body = document.getElementsByClassName('form-group required')[0]
+        console.log(body)
+        body.style.pointerEvents = 'none'
+    })()
+  </script>
     {% next_button %}
 {% endblock %}
 

@@ -14,7 +14,17 @@ SESSION_CONFIGS = [
     dict(
         name = 'pay_secrecy',
         num_demo_participants=1,
-        app_sequence=['pay_secrecy']
+        app_sequence=['pay_secrecy', 'simple_quiz']
+    ),
+    dict(
+        name = 'simple_quiz',
+        num_demo_participants=1,
+        app_sequence=['simple_quiz']
+    ),
+    dict(
+        name = 'quiz',
+        num_demo_participants=1,
+        app_sequence=['quiz']
     ),
     dict(
         name = 'add_numbers',
