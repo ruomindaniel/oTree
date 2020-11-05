@@ -21,6 +21,7 @@ class Screen4(Page):
     '''[Practice] Game determining role
     '''
     form_model = 'player'
+    timeout_seconds = 60
 
     form_fields = ['member'+str(i) for i in range(30)]
     def before_next_page(self):

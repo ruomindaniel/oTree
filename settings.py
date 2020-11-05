@@ -13,7 +13,7 @@ SESSION_CONFIG_DEFAULTS = dict(
 SESSION_CONFIGS = [
     dict(
         name = 'pay_secrecy',
-        num_demo_participants=1,
+        num_demo_participants=4,
         app_sequence=['pay_secrecy', 'simple_quiz']
     ),
     dict(

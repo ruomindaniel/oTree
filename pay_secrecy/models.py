@@ -19,7 +19,7 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'pay_secrecy'
-    players_per_group = None
+    players_per_group = 4
     num_rounds = 1
     pay_transparent = 0
 

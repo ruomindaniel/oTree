@@ -7,9 +7,7 @@ import csv
 author = 'Your name here'
 
 doc = """
-A prototype_Part2 app that reads its questions from a spreadsheet
-(see prototype_Part2.csv in this directory).
-There is 1 question per page; the number of pages in the game
+the number of pages in the game
 is determined by the number of questions in the CSV.
 See the comment below about how to randomize the order of pages.
 """
@@ -22,7 +20,7 @@ class Constants(BaseConstants):
     with open('simple_quiz/quiz.csv') as questions_file:
         questions = list(csv.DictReader(questions_file))
 
-    num_rounds = 5 #len(questions)
+    num_rounds = 15 #len(questions)
 
 
 class Subsession(BaseSubsession):
